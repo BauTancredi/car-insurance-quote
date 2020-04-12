@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import Summary from "./components/Summary";
 import Result from "./components/Result";
+import Spinner from "./components/Spinner";
 
 const Container = styled.div`
   max-width: 600px;
@@ -25,15 +26,18 @@ function App() {
     },
   });
 
+  const [loading, setLoading] = useState(false);
+
   const { data, quotation } = summary;
 
   return (
     <Container>
       <Header title="Car insurance quote" />;
       <FormContainer>
-        <Form setSummary={setSummary} />
-        <Summary data={data} />
-        <Result quotation={quotation} />
+        <Form setSummary={setSummary} setLoading={setLoading} />
+        {loading ? <Spinner /> : null}
+        {!loading ? <Summary data={data} /> : null}
+        {!loading ? <Result quotation={quotation} /> : null}
       </FormContainer>
     </Container>
   );
