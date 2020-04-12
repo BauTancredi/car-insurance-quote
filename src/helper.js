@@ -26,3 +26,7 @@ export function calculateBrand(brand) {
 export function obtainPlan(plan) {
   return plan === "basic" ? 1.2 : 1.5;
 }
+
+export function firstCapitalLetter(text) {
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
