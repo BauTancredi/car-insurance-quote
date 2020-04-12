@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
+import PropTypes from "prop-types";
 import { obtainYearDifference, calculateBrand, obtainPlan } from "../helper";
 
 const Field = styled.div`
@@ -90,7 +91,7 @@ const Form = ({ setSummary, setLoading }) => {
     setTimeout(() => {
       setLoading(false);
       setSummary({
-        quotation: result,
+        quotation: Number(result),
         data,
       });
     }, 3000);
@@ -146,6 +147,11 @@ const Form = ({ setSummary, setLoading }) => {
       <Button type="submit">Quote</Button>
     </form>
   );
+};
+
+Form.propTypes = {
+  setSummary: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
 };
 
 export default Form;
