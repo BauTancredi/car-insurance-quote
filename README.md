@@ -5,7 +5,7 @@ Car Insurance Quote
 <h2>
 Intro
 </h2>
-Car Insurance Quote is a personal project developed with React. It allows you to create a budget and add expenses.
+Car Insurance Quote is a personal project developed with React. It allows you quote an insurance for your car depending on several inputs. 
 
 We use Hooks to control the flow of the props and the state of the app.
 Styled components with emotion are used for css.
